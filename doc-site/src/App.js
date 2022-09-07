@@ -1,7 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    async function doStuff() {
+      const response = await fetch("http://localhost:5050/graphql", {
+        method: "POST",
+      });
+      const data = await response.text();
+      console.log(data);
+    }
+    doStuff();
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
