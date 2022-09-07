@@ -5,6 +5,7 @@ import { useEffect } from "react";
 function App() {
   useEffect(() => {
     async function doStuff() {
+      console.log("Requesting...");
       const response = await fetch("http://localhost:5050/graphql", {
         method: "POST",
       });
